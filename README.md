@@ -1,3 +1,5 @@
+![Banner](banner.png)
+
 # Favorite-Linux-Distributions
 
 Garuda Linux KDE and Pop!_OS Cosmic Desktop
