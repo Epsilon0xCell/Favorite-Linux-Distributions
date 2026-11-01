@@ -1,208 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Favorite-Linux-Distributions: Two Specimens and a Hybrid</title>
-<!-- pages-campaign site for Epsilon0xCell/Favorite-Linux-Distributions; source of truth: Favorite-Linux-Distributions-Website/ on the default branch -->
-<!-- I rebuilt this as specimen plates, not a field guide. Two large plates at different scales, then one hybrid plate where the traits meet. -->
-<style>
-/* I set this on warm paper with ink borders and offset plates. Nothing here is a uniform grid, and nothing is centred by default. */
-:root{--paper:#f3eee3;--ink:#22201a;--accent:#8a3324;--muted:#6b6455;--plate:#fffdf6;--line:#22201a}
-*{box-sizing:border-box}
-body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;line-height:1.6}
-a{color:var(--accent)}
-.top{padding:34px 5vw 10px;max-width:1180px}
-.kicker{font-family:Verdana,sans-serif;font-size:11px;letter-spacing:.26em;text-transform:uppercase;margin:0}
-h1{font-size:clamp(34px,5.4vw,62px);line-height:1.02;font-weight:normal;margin:14px 0 10px;max-width:820px}
-.lede{font-size:19px;max-width:640px;margin:0 0 18px}
-.badges{display:flex;gap:7px;flex-wrap:wrap;margin:16px 0 8px}
-.badges img{height:20px}
-.bannerwrap{margin:18px 5vw 0;max-width:980px}
-.bannerwrap img,.logowrap img{width:100%;display:block;border:1px solid var(--line)}
-figcaption,.cap{font-family:Verdana,sans-serif;font-size:12px;color:var(--muted);margin-top:6px;line-height:1.5}
-main{padding:10px 5vw 30px}
-.plate{background:var(--plate);border:2px solid var(--line);padding:28px 30px;box-shadow:8px 8px 0 rgba(34,32,26,.14)}
-.plate .no{font-family:Verdana,sans-serif;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--accent)}
-.plate h2{font-size:clamp(30px,4vw,46px);font-weight:normal;margin:8px 0 4px;line-height:1.1}
-.plate h2 small{display:block;font-size:15px;font-family:Verdana,sans-serif;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:6px}
-.plate-a{max-width:760px;margin:36px 0 0 2vw}
-.plate-b{max-width:620px;margin:44px 0 0 auto;margin-right:3vw}
-.spec{margin:16px 0 0;padding:0;list-style:none}
-.spec li{border-top:1px solid #d8d0ba;padding:9px 0;display:grid;grid-template-columns:130px 1fr;gap:14px}
-.spec b{font-family:Verdana,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;font-weight:normal;padding-top:4px}
-@media(max-width:600px){.spec li{grid-template-columns:1fr;gap:2px}.plate-a,.plate-b{margin-left:0;margin-right:0}}
-.note{font-size:17px;max-width:560px}
-.hybrid{margin:64px 0 0 0;border:2px solid var(--line);background:#ece5d2;padding:30px}
-.hybrid h2{font-size:clamp(30px,4.4vw,50px);font-weight:normal;margin:8px 0;line-height:1.08}
-.label{display:inline-block;border:1px solid var(--accent);color:var(--accent);font-family:Verdana,sans-serif;font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding:4px 9px}
-.traits{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:22px;overflow:hidden}
-@media(max-width:640px){.traits{grid-template-columns:1fr}}
-.trait{padding:20px;border:1px solid var(--line);background:var(--plate)}
-.trait h3{margin:0 0 6px;font-weight:normal;font-size:22px}
-.captures{margin:56px 0 0 1vw;max-width:860px}
-.captures h2,.sheets h2{font-weight:normal;font-size:32px}
-pre{background:#22201a;color:#f3eee3;padding:18px 20px;overflow:auto;font-size:14px;line-height:1.6;white-space:pre-wrap}
-.sheets{margin:56px 0 0}
-.sheet{margin:0 0 34px}
-.sheet.wide{max-width:880px}
-.sheet.narrow{max-width:640px;margin-left:6vw}
-.sheet img{width:100%;display:block;border:1px solid var(--line);background:#fff}
-.logowrap{max-width:340px;margin:28px 0 0 4vw}
-footer{border-top:2px solid var(--line);margin:50px 5vw 0;padding:18px 0 34px;font-family:Verdana,sans-serif;font-size:12px;display:flex;gap:18px;flex-wrap:wrap}
-/* I gate the hidden start state on the js class, so with JavaScript off every plate is already in place. */
-.js .reveal{opacity:0;transform:translateY(18px)}
-.js .reveal.seen{opacity:1;transform:none;transition:opacity .6s ease,transform .6s ease}
-.js .trait-left{transform:translateX(-26px)}
-.js .trait-right{transform:translateX(26px)}
-.js .hybrid.seen .trait-left,.js .hybrid.seen .trait-right{transform:none;transition:transform .7s ease}
-@media (prefers-reduced-motion: reduce){
-.js .reveal{opacity:1;transform:none;transition:none}
-.js .trait-left,.js .trait-right{transform:none;transition:none}
-}
-</style>
-</head>
-<body>
-<header class="top">
-<p class="kicker">Specimen plates, a short list kept short</p>
-<h1>Favorite-Linux-Distributions: Two Specimens and a Hybrid</h1>
-<p class="lede">I keep this list to two setups. One pairs Garuda Linux with the KDE desktop. The other pairs Pop!_OS with the Cosmic desktop. Below the two plates I set out the combination I actually want, and I label it for what it is.</p>
-<div class="badges">
-<img src="https://img.shields.io/github/stars/Epsilon0xCell/Favorite-Linux-Distributions?style=flat&color=8a3324" alt="Stars">
-<img src="https://img.shields.io/github/forks/Epsilon0xCell/Favorite-Linux-Distributions?style=flat&color=8a3324" alt="Forks">
-<img src="https://img.shields.io/github/last-commit/Epsilon0xCell/Favorite-Linux-Distributions?style=flat&color=8a3324" alt="Last commit">
-<img src="https://img.shields.io/github/languages/top/Epsilon0xCell/Favorite-Linux-Distributions?style=flat&color=8a3324" alt="Top language">
-<img src="https://img.shields.io/github/repo-size/Epsilon0xCell/Favorite-Linux-Distributions?style=flat&color=8a3324" alt="Repo size">
-<img src="https://img.shields.io/github/license/Epsilon0xCell/Favorite-Linux-Distributions?style=flat&color=8a3324" alt="License, MIT">
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Favorite-Linux-Distributions</title>
+<style>@font-face{font-family:Alike;src:url(fonts/Alike-Regular.ttf)}@font-face{font-family:Cabin;src:url(fonts/Cabin-Regular.ttf)}
+body{margin:0;background:#e4cda0;color:#1d1c17;font-family:Cabin,Arial,sans-serif;line-height:1.6}h1,h2,h3{font-family:Alike,Georgia,serif}
+.shelfboard{display:flex;gap:28px;overflow-x:auto;padding:30px 4vw;border-bottom:10px solid #26468c;align-items:flex-start}
+.entry{background:#fbf6e6;border:1px solid #26468c;padding:22px 26px;min-width:320px}
+.entry.big{min-width:440px}.tray{border:2px solid #b08a2e;padding:6px}
+a{color:#26468c;text-decoration:none;border-bottom:2px dashed #999}a:hover{border-bottom:2px solid #555}
+button,.note-btn{font-family:Cabin,sans-serif;background:#fbf6e6;border:2px solid #26468c;padding:8px 16px;cursor:pointer;transition:background .4s,transform .15s}button:hover{background:#e8ddba}button:active{transform:translateY(2px)}
+pre{background:#22201a;color:#f3eee3;padding:16px;overflow:auto}header,footer,section.pad{padding:24px 4vw}</style></head><body>
+<header><h1>Favorite-Linux-Distributions</h1><p><img src="https://img.shields.io/github/stars/Epsilon0xCell/Favorite-Linux-Distributions" alt="stars"><img src="https://img.shields.io/github/forks/Epsilon0xCell/Favorite-Linux-Distributions" alt="forks"><img src="https://img.shields.io/github/last-commit/Epsilon0xCell/Favorite-Linux-Distributions" alt="last-commit"><img src="https://img.shields.io/github/languages/top/Epsilon0xCell/Favorite-Linux-Distributions" alt="languages/top"><img src="https://img.shields.io/github/repo-size/Epsilon0xCell/Favorite-Linux-Distributions" alt="repo-size"><img src="https://img.shields.io/github/license/Epsilon0xCell/Favorite-Linux-Distributions" alt="license"></p><p>License MIT. <a href="https://github.com/Epsilon0xCell/Favorite-Linux-Distributions">github.com/Epsilon0xCell/Favorite-Linux-Distributions</a></p>
+<p>This list is kept to two setups, one pairing Garuda Linux with the KDE desktop, the other pairing Pop!_OS with the Cosmic desktop, and below the two entries sits the combination the author actually wants, labelled for what it is.</p>
+<img style="width:100%;max-width:980px" src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/banner.png" alt="Banner"></header>
+<div class="shelfboard">
+<article class="entry big tray"><h2>Garuda Linux</h2><p>Desktop: KDE</p><p>Maker site: <a href="https://garudalinux.org/">https://garudalinux.org/</a></p><p>First of the two picks in the README.</p></article>
+<article class="entry tray"><h2>Pop!_OS</h2><p>Desktop: Cosmic</p><p>Maker site: <a href="https://system76.com/pop/">https://system76.com/pop/</a></p><p>Second of the two picks.</p></article>
+<div class="entry"><p>In the margin, a pencilled bracket gathers both entries together and a note asks: what if the base from the first took the desktop from the second?</p></div>
 </div>
-</header>
-
-<figure class="bannerwrap">
-<img src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/banner.png" alt="Banner image from this repo">
-<figcaption>Banner from this repo, banner.png in the root.</figcaption>
-</figure>
-
-<figure class="logowrap">
-<img src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/logo.png" alt="Logo image from this repo">
-<figcaption>Logo from this repo, logo.png in the root.</figcaption>
-</figure>
-
-<main>
-<!-- I placed the Garuda plate larger and further left, and the Pop!_OS plate smaller and pushed right, so the pair reads as two specimens at different scales rather than two matching cards. -->
-<article class="plate plate-a reveal">
-<p class="no">Plate 1, the larger specimen</p>
-<h2>Garuda Linux <small>Desktop: KDE</small></h2>
-<p class="note">My stated reason, in short: this is one of the two setups I like most, the one with the KDE desktop.</p>
-<ul class="spec">
-<li><b>Name</b><span>Garuda Linux</span></li>
-<li><b>Desktop</b><span>KDE</span></li>
-<li><b>Maker site</b><span><a href="https://garudalinux.org/">https://garudalinux.org/</a></span></li>
-<li><b>Place in list</b><span>First of my two picks in the README.</span></li>
-</ul>
-</article>
-
-<article class="plate plate-b reveal">
-<p class="no">Plate 2, the smaller specimen</p>
-<h2>Pop!_OS <small>Desktop: Cosmic</small></h2>
-<p class="note">My stated reason, in short: this is the other of the two setups I like most, the one with the Cosmic desktop.</p>
-<ul class="spec">
-<li><b>Name</b><span>Pop!_OS</span></li>
-<li><b>Desktop</b><span>Cosmic</span></li>
-<li><b>Maker site</b><span><a href="https://system76.com/pop/">https://system76.com/pop/</a></span></li>
-<li><b>Place in list</b><span>Second of my two picks in the README.</span></li>
-</ul>
-</article>
-
-<section class="hybrid reveal" id="hybrid">
-<p class="no">Hybrid plate, below the two specimens</p>
-<p><span class="label">My pick, a combination, not a product</span></p>
-<h2>Ultimate OS: Garuda Linux Cosmic Desktop</h2>
-<p class="note">That heading is my own line from the README. I mean Garuda, but with Cosmic instead of KDE. I state it plainly here: this hybrid is my preferred combination. It is not a distribution anyone can download as such, and it is not a release.</p>
-<div class="traits">
-<div class="trait trait-left">
-<h3>From Plate 1: Garuda Linux</h3>
-<p>I take Garuda Linux as the base. That is the distro side of the pairing I want.</p>
-</div>
-<div class="trait trait-right">
-<h3>From Plate 2: Cosmic desktop</h3>
-<p>I take the Cosmic desktop instead of KDE. That is the desktop side of the pairing I want.</p>
-</div>
-</div>
-<p>Put together, the two traits meet in the middle of this plate. Apart, they stay the two real picks above, each with its own maker site.</p>
-</section>
-
-<section class="captures">
-<h2>Text captures from the README</h2>
-<p>This repo is a list, not code, so I have no code captures to show. The captures here are the README blocks themselves, reproduced exactly as written.</p>
-<h3>Capture 1: the two maker URLs, as a code block in the README</h3>
-<pre>https://garudalinux.org/
-https://system76.com/pop/</pre>
-<h3>Capture 2: the closing passage, from my short list note through the Ultimate OS lines</h3>
-<pre>I keep this list short on purpose. The two setups above are the ones I
+<section class="pad"><p><span style="border:1px solid #8a3324;color:#8a3324;padding:4px 9px">A combination, not a product</span></p><h2>Ultimate OS: Garuda Linux Cosmic Desktop</h2><p>Left trait, from entry one: Garuda Linux as the base. Right trait, from entry two: the Cosmic desktop instead of KDE. This hybrid is a preferred combination. It is not a distribution anyone can download as such, and it is not a release.</p><button type="button">Margin note</button></section>
+<section class="pad"><h2>Text captures</h2><h3>Capture one: the two maker URLs exactly as they sit in the README code block</h3><pre>https://garudalinux.org/
+https://system76.com/pop/</pre><h3>Capture two: the closing passage exactly</h3><pre>I keep this list short on purpose. The two setups above are the ones I
 like most, one with the KDE desktop and one with the Cosmic desktop. My
 pick below is what I get when I put those two choices together: Garuda,
 but with Cosmic instead of KDE.
 
 # Ultimate OS:
-Garuda Linux Cosmic Desktop</pre>
-<p>I also state in the README that this repo is a short list of picks, not code, that the website folder holds a static page presenting the same picks, and that it runs no installer and changes no system.</p>
-</section>
-
-<section class="sheets">
-<h2>Visual sheets from this repo</h2>
-<p>My VISUAL.md describes five sheets. The folder in fact holds six PNG sheets. I show all six below, and I note the difference here rather than leaving the sixth one out. The captions for the five described sheets follow VISUAL.md. The sixth, schematic.png, is present in the folder but is not described in VISUAL.md, so I caption only that much.</p>
-
-<figure class="sheet wide">
-<img src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/architecture.png" alt="Architecture visual sheet">
-<figcaption class="cap">architecture.png: the put together sheet, as described in VISUAL.md.</figcaption>
-</figure>
-
-<figure class="sheet narrow">
-<img src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/flowchart.png" alt="Flowchart visual sheet">
-<figcaption class="cap">flowchart.png: the run sheet, as described in VISUAL.md.</figcaption>
-</figure>
-
-<figure class="sheet wide">
-<img src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/product-map.png" alt="Product map visual sheet">
-<figcaption class="cap">product-map.png: what the project is for, what goes in, what comes out, and where it stops, as described in VISUAL.md.</figcaption>
-</figure>
-
-<figure class="sheet narrow">
-<img src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/data-flow.png" alt="Data flow visual sheet">
-<figcaption class="cap">data-flow.png: the data path in one direction, file to result, as described in VISUAL.md.</figcaption>
-</figure>
-
-<figure class="sheet wide">
-<img src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/statistics.png" alt="Statistics visual sheet">
-<figcaption class="cap">statistics.png: the counts, drawn as bars that can be checked against the repo, as described in VISUAL.md.</figcaption>
-</figure>
-
-<figure class="sheet narrow">
-<img src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/schematic.png" alt="Schematic visual sheet">
-<figcaption class="cap">schematic.png: a sixth PNG sheet present in the Visuals folder. VISUAL.md describes five sheets and does not describe this one, so I add no claim about its contents beyond its presence.</figcaption>
-</figure>
-</section>
-</main>
-
-<footer>
-<span>Built by Epsilon0xCell</span>
-<a href="https://github.com/Epsilon0xCell/Favorite-Linux-Distributions">This repo</a>
-<a href="https://garudalinux.org/">garudalinux.org</a>
-<a href="https://system76.com/pop/">system76.com/pop</a>
-<a href="https://github.com/Epsilon0xCell">github.com/Epsilon0xCell</a>
-</footer>
-
-<script>
-document.documentElement.classList.add('js');
-// I reveal each plate once, in reading order, as it enters view. The hybrid traits slide to meet once at the same moment, using transform only.
-(function(){
-  var items=document.querySelectorAll('.reveal');
-  if(!('IntersectionObserver' in window)){items.forEach(function(el){el.classList.add('seen')});return;}
-  var io=new IntersectionObserver(function(entries){
-    entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('seen');io.unobserve(e.target);}});
-  },{threshold:0.12});
-  items.forEach(function(el){io.observe(el)});
-})();
-</script>
-</body>
-</html>
+Garuda Linux Cosmic Desktop</pre><p>The repo is a short list of picks, not code. Its website folder holds a static page presenting the same picks, and it runs no installer and changes no system.</p></section>
+<section class="pad"><h2>Visual sheets</h2><p>All six, named as the current site names them: architecture.png, flowchart.png, product-map.png, data-flow.png, statistics.png, and schematic.png. VISUAL.md describes five sheets and does not describe schematic.png, so no claim is added about the sixth beyond its presence.</p><div class="shelfboard"><figure style="min-width:300px"><img style="width:100%" src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/architecture.png" alt="architecture sheet"><figcaption>architecture.png</figcaption></figure><figure style="min-width:300px"><img style="width:100%" src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/flowchart.png" alt="flowchart sheet"><figcaption>flowchart.png</figcaption></figure><figure style="min-width:300px"><img style="width:100%" src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/product-map.png" alt="product-map sheet"><figcaption>product-map.png</figcaption></figure><figure style="min-width:300px"><img style="width:100%" src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/data-flow.png" alt="data-flow sheet"><figcaption>data-flow.png</figcaption></figure><figure style="min-width:300px"><img style="width:100%" src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/statistics.png" alt="statistics sheet"><figcaption>statistics.png</figcaption></figure><figure style="min-width:300px"><img style="width:100%" src="https://raw.githubusercontent.com/Epsilon0xCell/Favorite-Linux-Distributions/main/Favorite-Linux-Distributions-Visuals/schematic.png" alt="schematic sheet"><figcaption>schematic.png</figcaption></figure></div></section>
+<footer><a href="https://github.com/Epsilon0xCell/Favorite-Linux-Distributions">This repo</a> · <a href="https://garudalinux.org/">garudalinux.org</a> · <a href="https://system76.com/pop/">system76.com/pop</a> · <a href="https://github.com/Epsilon0xCell">github.com/Epsilon0xCell</a></footer>
+</body></html>
