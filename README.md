@@ -4,7 +4,7 @@
 
 <p align="center"><img src="logo.png" alt="Favorite-Linux-Distributions logo: a small open book in lapis blue and vermilion with gold leaf edges, a gold garuda-like raptor and one round poppy-red bird above it on parchment cream" width="200"></p>
 
-![Banner](banner.png)
+![Banner: an illuminated manuscript landscape, blue and gold dragons coiling through lapis waves on the left, a gold hill with a small castle and a winding path, a vermilion sky with gold stars and a crescent moon, in a marginalia border](banner.png)
 
 ![Scene: a shelf examined close in three bands, raking light crossing the spines, a book leaning, a loose leaf lifting, margin underlines appearing in pencil order](assets-scene.svg)
 
