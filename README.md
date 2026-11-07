@@ -1,6 +1,8 @@
-![Intro: a bookshop shelf at closing time, a gap one book wide, and an open used book whose pencilled margin argument runs off the page onto the shelf board, ending in a question mark scored into the wood](intro-banner.png)
+![Intro: a gold path arriving at a central hill on parchment, a small vermilion standard planted where the lapis and vermilion landscapes meet and swirl in the soil, gold leaf glints](intro-banner.png)
 
 # Favorite-Linux-Distributions
+
+<p align="center"><img src="logo.png" alt="Favorite-Linux-Distributions logo: a small open book in lapis blue and vermilion with gold leaf edges, a gold garuda-like raptor and one round poppy-red bird above it on parchment cream" width="200"></p>
 
 ![Banner](banner.png)
 
